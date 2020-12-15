@@ -864,7 +864,7 @@ async def amlonely(ctx):
         await ctx.send(random.choice(sad))
 @client.command()
 async def read_budget_discord(ctx):
-        client=pymongo.MongoClient('client')
+        client=pymongo.MongoClient('mongodb+srv://budgetdiscord:discord@cluster0.bn3df.mongodb.net/budgetdiscord?retryWrites=true&w=majority')
         database=client.messages
         messages=database.messages
         discovered=[]
@@ -884,7 +884,7 @@ async def send_budget_discord(ctx,*args):
         mes=args.split(":")
         username=mes[0]
         message=mes[1]
-        client=pymongo.MongoClient('client')
+        client=pymongo.MongoClient('mongodb+srv://budgetdiscord:discord@cluster0.bn3df.mongodb.net/budgetdiscord?retryWrites=true&w=majority')
         database=client.messages
         messages=database.messages
         messages.insert_one({"username":username,"message":message})
@@ -1074,5 +1074,5 @@ async def about(ctx):
         lol.add_field(name="stop",value="Stop playlist",inline=False)
         await ctx.send(embed=embed)
         await ctx.send(embed=lol)
-client.run('token')	
+client.run('NzM1MzgzMzY0ODM1NjA2NjEx.XxfdIA.9Sx4nUUUgiVWrkTqkyfu0tj3JZE')	
 
